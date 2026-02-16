@@ -30,17 +30,28 @@ The pipeline models two primary exposures:
 The system is designed to measure and contextualize risk, not eliminate it.
 
 ## System Architecture
-'''
-Data Ingestion
-    ↓
+
+
+<img width="1536" height="1024" alt="ChatGPT Image Feb 15, 2026, 06_23_47 PM" src="https://github.com/user-attachments/assets/a95d7c9f-5ba5-4759-a8c2-34db49fc56a7" />
+
+Data Ingestion 
+
+   ↓
+
 Feature Engineering
-    ↓
+
+   ↓  
+
 Risk Scoring Model
-    ↓
+
+   ↓
+
 Portfolio Aggregation
-    ↓
+
+   ↓
+
 LLM Report Generation
-'''
+
 
 ## Project Structure
 
