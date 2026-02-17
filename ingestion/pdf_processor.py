@@ -3,17 +3,10 @@ import asyncio
 
 
 async def extract_pdf_text_async(file_path: str) -> str:
-    """
-    Asynchronously extracts text from a PDF file.
 
-    NOTE:
-    In production, this would be handled by:
-    - A background job (Celery / queue)
-    - Object storage trigger
-    - Async worker service
-    """
-
+    # Asynchronously extracts text from a PDF file.
     # Simulate async background processing
+    
     await asyncio.sleep(0.1)
 
     text_content = []
