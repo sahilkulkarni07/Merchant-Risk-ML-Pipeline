@@ -18,12 +18,14 @@ def validate_schema(df: pd.DataFrame) -> None:
     Raises ValueError if validation fails.
     """
 
-    # 1️⃣ Check required columns
+    # Checking required columns
+    
     missing_cols = set(REQUIRED_COLUMNS) - set(df.columns)
     if missing_cols:
         raise ValueError(f"Missing required columns: {missing_cols}")
 
-    # 2️⃣ merchant_id validation
+    # merchant_id validation
+    
     if df["merchant_id"].isnull().any():
         raise ValueError("merchant_id contains null values")
 
@@ -33,15 +35,18 @@ def validate_schema(df: pd.DataFrame) -> None:
     if df["merchant_id"].duplicated().any():
         raise ValueError("Duplicate merchant_id found")
 
-    # 3️⃣ name validation
+    # name validation
+    
     if df["name"].isnull().any():
         raise ValueError("Merchant name contains null values")
 
-    # 4️⃣ country validation
+    # country validation
+    
     if df["country"].isnull().any():
         raise ValueError("Country contains null values")
 
-    # 5️⃣ Numeric fields validation
+    # Numeric fields validation
+    
     numeric_fields = ["monthly_volume", "dispute_count", "transaction_count"]
 
     for field in numeric_fields:
@@ -51,6 +56,7 @@ def validate_schema(df: pd.DataFrame) -> None:
         if (df[field] < 0).any():
             raise ValueError(f"{field} contains negative values")
 
-    # 6️⃣ transaction_count must be > 0
+    # transaction_count must be > 0
+    
     if (df["transaction_count"] == 0).any():
         raise ValueError("transaction_count must be greater than 0")
